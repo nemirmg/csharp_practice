@@ -51,11 +51,7 @@ else if (x > 0 && y < 0)
 
 Console.WriteLine($"Координаты ({x}, {y}) принадлежат {quarter} четверти.");
 
-/* -------------------
-Задача 3:
-Напишите программу, которая принимает на вход целое число из отрезка [10, 99]
-и показывает наибольшую цифру числа.
-------------------- */
+// -------------------
 
 Console.Clear();
 Console.WriteLine(@"Задача 3:
@@ -74,7 +70,7 @@ while (n < 10 || n > 99)
 
 int n1 = n / 10;
 int n2 = n % 10;
-string max;
+string max = "";
 if (n1 > n2)
     max = $"{n1}";
 else if (n1 < n2)
@@ -83,3 +79,34 @@ else
     max = "Цифры числа равны";
 
 Console.WriteLine(max);
+
+// -------------------
+
+Console.Clear();
+Console.WriteLine(@"Задача 4:
+Напишите программу, которая на вход принимает натуральное число N,
+а на выходе показывает его цифры через запятую.");
+
+string message = "\nВведите число: ";
+Console.Write(message);
+int n = int.Parse(Console.ReadLine()!);
+while (n < 0)
+{
+    string warning = "Число не должно быть отрицательным!";
+    Console.Write(warning + message);
+    n = int.Parse(Console.ReadLine()!);
+}
+
+int num;
+string text = "";
+while (n > 0)
+{
+    num = n % 10;
+    if (n / 10 == 0)
+        text = $"{num}" + text;
+    else
+        text = $", {num}" + text;
+    n /= 10;
+}
+
+Console.WriteLine(text);
