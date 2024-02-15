@@ -30,9 +30,6 @@ Console.WriteLine($"Начальная строка:\n{str}");
 
 string letters = "abcdefghijklmnopqrstuvwxyz";
 char[,] alphabet = createAlphabet(letters);
-// string[] alphabet = new string[2];
-// alphabet[0] = letters;
-// alphabet[1] = letters.ToUpper();
 
 string newStr = "";
 for (int i = 0; i < str.Length; i++){
